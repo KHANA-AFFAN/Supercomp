@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercomp Competition</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh; /* Ensures full screen height */
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #7038FA, #000000, #030014); /* Gradient background */
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #7038FA;
+        }
+
+        /* Contact Us Button Styles */
+        .contact-btn {
+            background-color: #7038FA; /* Purple background */
+            color: #000000; /* Black text for contrast */
+            border: 2px solid #7038FA; /* Purple border */
+            padding: 10px 20px;
+            border-radius: 30px; /* Curved edges */
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #030014; /* Dark accent on hover */
+            color: white; /* White text on hover */
+        }
+
+        /* Home Section with Background Image */
+        #home {
+            background-image: url("bg%20&%20color%20palette/1st%20bg.svg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure section takes up full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Steps Section */
+        .steps-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Heading for the steps section */
+        .steps-heading {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Container for the images */
+        .steps-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between the image boxes */
+        }
+
+        /* Each individual step (box) */
+        .step {
+            position: relative;
+            width: 150px; /* Width of the image box */
+            height: 200px; /* Height of the image box */
+            overflow: hidden;
+            border-radius: 10px; /* Optional: Rounded corners for the box */
+            border: 2px solid #ddd; /* Border for the box */
+            background-color: #0c0a0a; /* Background color of the box */
+            transition: transform 0.3s ease;
+            padding: 10px;
+        }
+
+        /* Image styling */
+        .step img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px; /* Optional: Rounding the image corners */
+        }
+
+        /* Description styling for each step */
+        .step-description {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #f1efef;
+        }
+
+        /* Hover effect on each step */
+        .step:hover {
+            transform: scale(1.05); /* Slightly enlarge the whole container */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow on hover */
+        }
+
+        /* Slider Section */
+        .slider-container {
+            position: fixed; /* Fix the slider to the bottom of the page */
+            bottom: 20px; /* Move the slider up a little (increased from 0px) */
+            width: 100%;
+            height: 90px; /* Decreased the height to match smaller images */
+            overflow: hidden;
+            background-color: black; /* Black background */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        /* Slider Styling */
+        .slider {
+            display: flex;
+            animation: slide 40s linear infinite; /* Faster looping animation */
+        }
+
+        /* Image Styling */
+        .slider img {
+            width: 6vw; /* Smaller images (6% of the viewport width) */
+            height: 80px; /* Decreased height to match the smaller images */
+            object-fit: cover;
+            margin-right: 150px; /* Increased gap between images */
+        }
+
+        /* Remove margin from the last image */
+        .slider img:last-child {
+            margin-right: 0;
+        }
+
+        /* Animation for sliding */
+        @keyframes slide {
+            0% {
+                transform: translateX(0); /* Start at the left */
+            }
+            100% {
+                transform: translateX(-100%); /* Move the entire width of images out of view */
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, #7038FA, #000000, #030014);
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="LOGOCOMPETITIONWHITE-removebg-preview.png" alt="Code in the Dark Logo" width="150">
+        </div>
+
+        <!-- Navigation Links -->
+        <nav>
+            <a href="#events">Events</a>
+            <a href="#about">About Us</a>
+            <a href="#sponsors">Sponsors</a>
+        </nav>
+
+        <!-- Contact Us Button -->
+        <button class="contact-btn">Contact Us</button>
+    </header>
+
+    <!-- Main Content with Background Image -->
+    <section id="home">
+        <div class="hero-content">
+            <h1 class="main-heading">
+                <span class="purple-text">PRESENTED</span>
+                <span class="white-text">BY</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Steps to Follow Section -->
+    <section id="steps">
+        <div class="steps-container">
+            <h2 class="steps-heading">Steps to Follow</h2>
+            <div class="steps-images">
+                <div class="step">
+                    <img src="analyze.gif" alt="Analyze">
+                    <p class="step-description">Analyze the problem</p>
+                    <p class="step-description">Collect relevant data</p>
+                </div>
+                <div class="step">
+                    <img src="brainstorm.gif" alt="Brainstorm">
+                    <p class="step-description">Brainstorm solutions</p>
+                    <p class="step-description">Identify potential ideas</p>
+                </div>
+                <div class="step">
+                    <img src="cat-computer.gif" alt="Implement">
+                    <p class="step-description">Implement the solution</p>
+                    <p class="step-description">Test the outcome</p>
+                </div>
+                <div class="step">
+                    <img src="evaluation.gif" alt="Evaluate">
+                    <p class="step-description">Evaluate the result</p>
+                    <p class="step-description">Refine and adjust</p>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section id="slider">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="our partners\BUDS LOGO (No bg and No text) 1.png" alt="Image 1">
+                <img src="our partners\image 5.png" alt="Image 2">
+                <img src="our partners\image 6.png" alt="Image 3">
+                <img src="our partners\image 7.png" alt="Image 4">
+                <img src="our partners\image 8.png" alt="Image 5">
+                <img src="our partners\image 9.png" alt="Image 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Supercomp Competition. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
